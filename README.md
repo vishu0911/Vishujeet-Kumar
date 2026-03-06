@@ -39,17 +39,3 @@ https://vishu0911.github.io/Vishujeet-Kumar/
 
 ![3FC225B0-CC40-451A-84B8-F38292AE442F_1_201_a](https://github.com/user-attachments/assets/878e1414-d3a7-453d-99ab-89cab433fbaf)
 
-# 📁 Folder Structure
-
-Vishu_Portfolio/
-├── Certificate/       # All certificates in PDF format
-├── image/             # Images for projects and certificates
-├── index.html         # Home page
-├── project.html       # Projects page
-├── friend.html        # Extra pages
-├── script.js          # JS scripts
-├── style.css          # Main CSS
-├── project.css        # Projects page CSS
-└── certificate.css    # Certificates page CSS
-
-# Made with ❤️ by Vishu
