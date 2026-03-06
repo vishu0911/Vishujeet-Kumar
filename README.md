@@ -27,9 +27,10 @@ Deployment: GitHub Pages
 
 # 🌐 Live Demo
 
-Portfolio Live Link  https://vishu0911.github.io/Vishujeet-Kumar/
+https://vishu0911.github.io/Vishujeet-Kumar/
 
 # 📸 Screenshots
 
-<img width="2880" height="1800" alt="image" src="https://github.com/user-attachments/assets/3d0d659f-944b-471a-8064-dc0ce40915d7" />
+![3C371807-0E7A-4586-8442-EB229A10C6D1_1_201_a](https://github.com/user-attachments/assets/dedc68fb-5dfd-40d3-b6d1-6aabe638bbe5)
+
 
