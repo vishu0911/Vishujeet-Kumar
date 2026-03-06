@@ -1,0 +1,369 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;600&display=swap');
+
+:root {
+    --body-color: rgba(250, 250, 250);
+    --text-color-second: rgba(38, 37, 37);
+    --first-color: rgba(110, 87, 244);
+    --first-shadow: rgba(0, 0, 0, 0.1);
+    --box-color: #fff;
+    --nav-color: #fff;
+    --nav-icon: #000;
+    --logo-color: #000;
+    --text-color: #444444;
+    --icon-color: #242526;
+    --mode-color: #ccc;
+    --primary-purple: #8749f2;
+    --purple-border: #963bd3;
+    --hover-purple: #6c63ff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: var(--body-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* Page Heading - Exactly matching your projects page heading style */
+.page-heading {
+    text-align: center;
+    padding: 80px 20px 40px;
+    margin: auto;
+    color: var(--text-color);
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+}
+
+.page-heading h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    background: linear-gradient(135deg, var(--primary-purple) 0%, #6c63ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+}
+
+.page-heading p {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    opacity: 0.9;
+    font-weight: 300;
+}
+
+/* Friend Container - Grid layout */
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 20px 10vw 60px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Friend Card - Matching project card style */
+.friend-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: 2px solid #fff;
+    border-radius: 20px;
+    box-shadow: 1px 8px 10px 2px var(--first-shadow);
+    overflow: hidden;
+    cursor: pointer;
+    padding: 30px 20px 25px;
+    transition: all 0.4s ease-in-out;
+    z-index: 1;
+}
+
+.friend-card::after {
+    content: "";
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--primary-purple);
+    transition: bottom 0.4s ease-in-out;
+    z-index: -1;
+    border-radius: 18px;
+}
+
+.friend-card:hover::after {
+    bottom: 0;
+}
+
+.friend-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 1px 12px 20px 5px var(--first-shadow);
+}
+
+/* Profile Picture */
+.profile-pic {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 4px solid var(--purple-border);
+    z-index: 2;
+    position: relative;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.friend-card:hover .profile-pic {
+    border-color: #fff;
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Friend Name */
+.friend-name {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: var(--text-color);
+    z-index: 2;
+    position: relative;
+    transition: color 0.3s ease;
+    text-align: center;
+    padding-bottom: 5px;
+}
+
+.friend-card:hover .friend-name {
+    color: #fff;
+}
+
+/* Social Icons Container */
+.social_icon {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 5px;
+    z-index: 2;
+    position: relative;
+    flex-wrap: wrap;
+}
+
+/* Social Icons */
+.icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background: transparent;
+    border: 2px solid var(--primary-purple);
+    border-radius: 50%;
+    font-size: 22px;
+    transition: all 0.5s ease;
+    color: var(--primary-purple);
+    text-decoration: none;
+    position: relative;
+    z-index: 2;
+}
+
+.friend-card:hover .icon {
+    border-color: #fff;
+    color: #fff;
+}
+
+.icon:hover {
+    background: var(--primary-purple);
+    color: #fff !important;
+    border-color: var(--primary-purple) !important;
+    transform: translateY(-3px) scale(1.1);
+    box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1);
+}
+
+.friend-card:hover .icon:hover {
+    background: #fff;
+    color: var(--primary-purple) !important;
+    border-color: #fff !important;
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+}
+
+/* Dark Mode Styles */
+body.dark {
+    --body-color: #202425;
+    --box-color: #1e1e1e;
+    --text-color: #fff;
+    --icon-color: #87794f;
+    --mode-color: #fff;
+    background: #202425;
+}
+
+body.dark .friend-card {
+    border-color: #333;
+}
+
+body.dark .friend-name {
+    color: #fff;
+}
+
+body.dark .profile-pic {
+    border-color: var(--purple-border);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+body.dark .icon {
+    border-color: var(--primary-purple);
+    color: #fff;
+}
+
+body.dark .icon:hover {
+    background: #fff;
+    color: var(--primary-purple) !important;
+    border-color: #fff !important;
+}
+
+body.dark .page-heading h1,
+body.dark .page-heading p {
+    color: #fff;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+    .container {
+        padding: 20px 5vw 40px;
+        gap: 25px;
+    }
+    
+    .page-heading h1 {
+        font-size: 2.2rem;
+    }
+    
+    .page-heading p {
+        font-size: 1.1rem;
+    }
+    
+    .profile-pic {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .page-heading {
+        padding: 80px 20px 30px;
+    }
+    
+    .page-heading h1 {
+        font-size: 2rem;
+    }
+    
+    .page-heading p {
+        font-size: 1rem;
+        padding: 0 15px;
+    }
+    
+    .container {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        padding: 20px;
+        gap: 20px;
+    }
+    
+    .friend-card {
+        padding: 25px 15px 20px;
+    }
+    
+    .profile-pic {
+        width: 110px;
+        height: 110px;
+        border-width: 3px;
+    }
+    
+    .friend-name {
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+    }
+    
+    .icon {
+        width: 42px;
+        height: 42px;
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .page-heading h1 {
+        font-size: 1.8rem;
+    }
+    
+    .page-heading p {
+        font-size: 0.95rem;
+    }
+    
+    .container {
+        grid-template-columns: 1fr;
+        padding: 15px;
+        gap: 20px;
+    }
+    
+    .friend-card {
+        max-width: 320px;
+        margin: 0 auto;
+        width: 100%;
+    }
+    
+    .profile-pic {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .friend-name {
+        font-size: 1.1rem;
+    }
+    
+    .social_icon {
+        gap: 12px;
+    }
+    
+    .icon {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+}
+
+/* Animation for cards */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.friend-card {
+    animation: fadeInUp 0.6s ease-out forwards;
+    animation-fill-mode: both;
+}
+
+.friend-card:nth-child(1) { animation-delay: 0.1s; }
+.friend-card:nth-child(2) { animation-delay: 0.15s; }
+.friend-card:nth-child(3) { animation-delay: 0.2s; }
+.friend-card:nth-child(4) { animation-delay: 0.25s; }
+.friend-card:nth-child(5) { animation-delay: 0.3s; }
+.friend-card:nth-child(6) { animation-delay: 0.35s; }
+.friend-card:nth-child(7) { animation-delay: 0.4s; }
+.friend-card:nth-child(8) { animation-delay: 0.45s; }
+.friend-card:nth-child(9) { animation-delay: 0.5s; }
+.friend-card:nth-child(10) { animation-delay: 0.55s; }

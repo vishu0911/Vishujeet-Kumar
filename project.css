@@ -1,0 +1,415 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;600&display=swap');
+
+:root {
+    --body-color: rgba(250, 250, 250);
+    --text-color-second: rgba(38, 37, 37);
+    --first-color: rgba(110, 87, 244);
+    --first-shadow: rgba(0, 0, 0, 0.1);
+    --box-color: #fff;
+    --nav-color: #fff;
+    --nav-icon: #000;
+    --logo-color: #000;
+    --text-color: #444444;
+    --icon-color: #242526;
+    --mode-color: #ccc;
+    --primary-purple: #8749f2;
+    --purple-border: #963bd3;
+    --hover-purple: #6c63ff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: var(--body-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Header Styling */
+header {
+    text-align: center;
+    padding: 80px 20px 40px;
+    margin: auto;
+    color: var(--text-color);
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+}
+
+header h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    background: linear-gradient(135deg, var(--primary-purple) 0%, #6c63ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+}
+
+header p {
+    font-size: 1.3rem;
+    color: var(--text-color);
+    opacity: 0.9;
+    font-weight: 300;
+}
+
+/* Project Container */
+.project-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    padding: 40px;
+    max-width: 1300px;
+    margin: 0 auto 60px;
+}
+
+/* Project Card */
+.project-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background: var(--box-color);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    box-shadow: 0 10px 30px -15px var(--first-shadow);
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 1;
+}
+
+.project-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, var(--primary-purple) 0%, #6c63ff 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 1;
+    border-radius: 24px;
+}
+
+.project-card:hover::before {
+    opacity: 1;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px -15px var(--primary-purple);
+}
+
+/* Card Image */
+.project-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 22px 22px 0 0;
+    position: relative;
+    z-index: 2;
+    transition: transform 0.5s ease;
+    border-bottom: 3px solid var(--purple-border);
+}
+
+.project-card:hover img {
+    transform: scale(1.05);
+}
+
+/* Project Content */
+.project-content {
+    padding: 25px 20px;
+    position: relative;
+    z-index: 2;
+    background: transparent;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-content h3 {
+    margin: 0 0 12px;
+    color: var(--text-color);
+    font-size: 1.4rem;
+    font-weight: 600;
+    transition: color 0.3s ease;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.project-content h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: var(--primary-purple);
+    transition: width 0.3s ease;
+    border-radius: 2px;
+}
+
+.project-card:hover .project-content h3::after {
+    width: 80px;
+    background: #fff;
+}
+
+.project-content p {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    transition: color 0.3s ease;
+    flex: 1;
+}
+
+.project-card:hover .project-content h3,
+.project-card:hover .project-content p {
+    color: #fff;
+}
+
+/* Project Links */
+.project-links {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: auto;
+}
+
+.project-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    background: transparent;
+    color: var(--primary-purple);
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    z-index: 2;
+    position: relative;
+    border: 2px solid var(--primary-purple);
+    gap: 8px;
+    flex: 0 1 auto;
+}
+
+.project-links a::before {
+    content: '→';
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+}
+
+.project-links a:hover::before {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.project-links a:hover {
+    background: #fff;
+    color: var(--hover-purple);
+    border-color: #fff;
+    transform: translateX(5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.project-card:hover .project-links a {
+    border-color: #fff;
+    color: #fff;
+}
+
+.project-card:hover .project-links a:hover {
+    background: #fff;
+    color: var(--primary-purple);
+    border-color: #fff;
+}
+
+/* Custom Cursor (if used) */
+.custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    background-color: var(--primary-purple);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.15s ease, background-color 0.3s ease;
+    mix-blend-mode: difference;
+}
+
+.custom-cursor.hover {
+    transform: scale(2);
+    background-color: transparent;
+    border: 2px solid var(--primary-purple);
+}
+
+/* Dark Mode */
+body.dark {
+    --body-color: #202425;
+    --box-color: #1e1e1e;
+    --text-color: #fff;
+    --icon-color: #87794f;
+    --mode-color: #fff;
+    background: #202425;
+}
+
+body.dark .project-card {
+    background: #1e1e1e;
+    border-color: #333;
+}
+
+body.dark .project-content h3 {
+    color: #fff;
+}
+
+body.dark .project-content p {
+    color: #ccc;
+}
+
+body.dark .project-links a {
+    border-color: var(--primary-purple);
+    color: #fff;
+}
+
+body.dark .project-links a:hover {
+    background: #fff;
+    color: var(--primary-purple);
+}
+
+body.dark header p {
+    color: #ccc;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+    .project-container {
+        padding: 30px;
+        gap: 25px;
+    }
+    
+    header h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        padding: 60px 20px 30px;
+    }
+    
+    header h1 {
+        font-size: 2.2rem;
+    }
+    
+    header p {
+        font-size: 1.1rem;
+    }
+    
+    .project-container {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        padding: 20px;
+        gap: 20px;
+    }
+    
+    .project-card img {
+        height: 200px;
+    }
+    
+    .project-content h3 {
+        font-size: 1.2rem;
+    }
+    
+    .project-links a {
+        padding: 8px 16px;
+        font-size: 0.85rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+    
+    header p {
+        font-size: 1rem;
+    }
+    
+    .project-container {
+        grid-template-columns: 1fr;
+        padding: 15px;
+    }
+    
+    .project-content {
+        padding: 20px 15px;
+    }
+    
+    .project-links {
+        flex-direction: column;
+    }
+    
+    .project-links a {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .project-links a::before {
+        display: none;
+    }
+}
+
+/* Loading Animation (Optional) */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.project-card {
+    animation: fadeInUp 0.6s ease-out forwards;
+    animation-fill-mode: both;
+}
+
+.project-card:nth-child(1) { animation-delay: 0.1s; }
+.project-card:nth-child(2) { animation-delay: 0.2s; }
+.project-card:nth-child(3) { animation-delay: 0.3s; }
+.project-card:nth-child(4) { animation-delay: 0.4s; }
+.project-card:nth-child(5) { animation-delay: 0.5s; }
+.project-card:nth-child(6) { animation-delay: 0.6s; }
+
+/* Remove any unused featured-box, nav, etc. styles from media queries */
+@media only screen and (max-width: 900px) {
+    .featured-box,
+    .featured-text,
+    .featured-image,
+    .image,
+    .row,
+    .col,
+    .about-info,
+    .contact-info,
+    .project-box,
+    .mode,
+    .nav-menu,
+    .nav-menu-btn,
+    .social_icon {
+        /* These styles won't affect your project page */
+        display: none;
+    }
+}

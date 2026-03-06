@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <link rel="stylesheet" href="project.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+    <header>
+        <h1>My projects</h1>
+        <p>Explore my latest work</p>
+    </header>
+
+    <section class="project-container">
+
+        <!---Calculator--->
+
+        <div class="project-card">
+            <img src="image/Calculator.jpg" alt="Calculator Website">
+            <div class="project-content">
+                <h3>Simple Calculator</h3>
+                <p>A modern and responsive calculator using HTML, CSS, and JavaScript.</p>
+                <div class="project-links">
+                    <a href="https://github.com/vishu0911/Calculator" target="_blank">GitHub</a>
+                    <a href="https://vishu0911.github.io/Calculator/">Live Demo</a>
+                </div>
+            </div>
+        </div>
+
+        <!---Weather API--->
+
+        <div class="project-card">
+            <img src="image/Weather.jpg" alt="Weather API">
+            <div class="project-content">
+                <h3>Weather API</h3>
+                <p>A modern and responsive Weather API using HTML, CSS, and JavaScript.</p>
+                <div class="project-links">
+                    <a href="https://github.com/vishu0911/Weather" target="_blank">GitHub</a>
+                    <a href="https://vishu0911.github.io/Weather/ ">Live Demo</a>
+                </div>
+            </div>
+        </div>
+
+        <!---Library Managment--->
+
+        <div class="project-card">
+            <img src="image\library-management.jpg" alt="Library Management System">
+            <div class="project-content">
+                <h3>Library Management System</h3>
+                <p>Built with Python and MySQL to manage books and members efficiently.</p>
+                <div class="project-links">
+                    <a href="#" target="_blank">GitHub</a>
+                    <a href="#">Live Demo</a>
+                </div>
+            </div>
+        </div>
+
+        <!---Protfolio--->
+
+        <div class="project-card">
+            <img src="image/portfolio.jpg" alt="Portfolio Website">
+            <div class="project-content">
+                <h3>Portfolio Website</h3>
+                <p>A modern and responsive portfolio using HTML, CSS, and JavaScript.</p>
+                <div class="project-links">
+                    <a href="#" target="_blank">GitHub</a>
+                    <a href="#">Live Demo</a>
+                </div>
+            </div>
+        </div>
+
+        <!---Add more project-card block below--->
+
+    </section>
+    <!-- <a class="back-home" href="index.html">&larr; Back to Home</a> -->
+
+    <script>
+
+    const hoverElements = document.querySelectorAll('a, button, .hover-target');
+
+    hoverElements.forEach(el => {
+        el.addEventListener('mouseenter', () => {
+            cursor.classList.add('hover');
+        });
+        el.addEventListener('mouseleave', () => {
+            cursor.classList.remove('hover');
+        });
+        });
+        // On page load, apply saved theme
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                document.body.classList.add('dark');
+            }
+        });
+    </script>
+</body>
+
+</html>
