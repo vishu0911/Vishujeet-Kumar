@@ -30,3 +30,6 @@ Deployment: GitHub Pages
 Portfolio Live Link  https://vishu0911.github.io/Vishujeet-Kumar/
 
 # 📸 Screenshots
+
+<img width="2880" height="1800" alt="image" src="https://github.com/user-attachments/assets/3d0d659f-944b-471a-8064-dc0ce40915d7" />
+
